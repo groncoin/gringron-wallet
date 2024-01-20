@@ -1,0 +1,40 @@
+[package]
+name = "gringron_wallet_util"
+version = "5.2.0-beta.1"
+authors = ["GrinGron Developers <mimblewimble@lists.launchpad.net>"]
+description = "Util, for generic utilities and to re-export gringron crates"
+license = "Apache-2.0"
+repository = "https://github.com/groncoin/gringron-wallet"
+keywords = [ "crypto", "gringron", "mimblewimble" ]
+workspace = ".."
+edition = "2018"
+
+[dependencies]
+rand = "0.6"
+serde = "1"
+serde_derive = "1"
+ed25519-dalek = "1.0.0-pre.4"
+data-encoding = "2"
+sha3 = "0.8"
+thiserror = "1"
+
+##### GrinGron Imports
+
+# For Release
+#gringron_util = "4.0.0"
+
+# For beta release
+
+gringron_util = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+
+# For bleeding edge
+# gringron_util = { git = "https://github.com/groncoin/gringron", branch = "master" }
+
+# For local testing
+
+# gringron_util = { path = "../../gringron/util"}
+
+#####
+
+[dev-dependencies]
+pretty_assertions = "0.6"

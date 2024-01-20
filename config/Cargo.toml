@@ -1,0 +1,44 @@
+[package]
+name = "gringron_wallet_config"
+version = "5.2.0-beta.1"
+authors = ["GrinGron Developers <mimblewimble@lists.launchpad.net>"]
+description = "Configuration for gringron wallet , a simple, private and scalable cryptocurrency implementation based on the MimbleWimble chain format."
+license = "Apache-2.0"
+repository = "https://github.com/groncoin/gringron-wallet"
+keywords = [ "crypto", "gringron", "mimblewimble" ]
+workspace = ".."
+edition = "2018"
+
+[dependencies]
+rand = "0.6"
+serde = "1"
+serde_derive = "1"
+toml = "0.5"
+dirs = "2.0"
+
+gringron_wallet_util = { path = "../util", version = "5.2.0-beta.1" }
+
+##### GrinGron Imports
+
+# For Release
+#gringron_core = "4.0.0"
+#gringron_util = "4.0.0"
+
+# For beta release
+
+gringron_core = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3"}
+gringron_util = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+
+# For bleeding edge
+# gringron_core = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_util = { git = "https://github.com/groncoin/gringron", branch = "master" }
+
+# For local testing
+# gringron_core = { path = "../../gringron/core"}
+# gringron_util = { path = "../../gringron/util"}
+
+#####
+
+[dev-dependencies]
+pretty_assertions = "0.6"
+

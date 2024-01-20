@@ -1,0 +1,57 @@
+[package]
+name = "gringron_wallet_api"
+version = "5.2.0-beta.1"
+authors = ["GrinGron Developers <mimblewimble@lists.launchpad.net>"]
+description = "GrinGron Wallet API"
+license = "Apache-2.0"
+repository = "https://github.com/groncoin/gringron-wallet"
+keywords = [ "crypto", "gringron", "mimblewimble" ]
+exclude = ["**/*.gringron", "**/*.gringron2"]
+edition = "2018"
+
+[dependencies]
+log = "0.4"
+uuid = { version = "0.8", features = ["serde", "v4"] }
+serde = "1"
+rand = "0.6"
+serde_derive = "1"
+serde_json = "1"
+easy-jsonrpc-mw = "0.5.4"
+chrono = { version = "0.4.11", features = ["serde"] }
+ring = "0.16"
+base64 = "0.12"
+ed25519-dalek = "1.0.0-pre.4"
+
+gringron_wallet_libwallet = { path = "../libwallet", version = "5.2.0-beta.1" }
+gringron_wallet_config = { path = "../config", version = "5.2.0-beta.1" }
+gringron_wallet_impls = { path = "../impls", version = "5.2.0-beta.1" }
+gringron_wallet_util = { path = "../util", version = "5.2.0-beta.1" }
+
+##### GrinGron Imports
+
+# For Release
+#gringron_core = "4.0.0"
+#gringron_keychain = "4.0.0"
+#gringron_util = "4.0.0"
+
+# For beta release
+
+gringron_core = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3"}
+gringron_keychain = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+gringron_util = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+
+# For bleeding edge
+# gringron_core = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_keychain = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_util = { git = "https://github.com/groncoin/gringron", branch = "master" }
+
+# For local testing
+# gringron_core = { path = "../../gringron/core"}
+# gringron_keychain = { path = "../../gringron/keychain"}
+# gringron_util = { path = "../../gringron/util"}
+
+#####
+
+[dev-dependencies]
+serde_json = "1"
+tempfile = "3.1"

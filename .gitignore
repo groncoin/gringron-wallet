@@ -1,0 +1,13 @@
+*.swp
+.DS_Store
+.gringron*
+node*
+!node_clients
+!node_clients.rs
+target
+*/Cargo.lock
+*.iml
+gringron.log
+wallet.seed
+test_output
+.idea/

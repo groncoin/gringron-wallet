@@ -1,0 +1,81 @@
+[package]
+name = "gringron_wallet_impls"
+version = "5.2.0-beta.1"
+authors = ["GrinGron Developers <mimblewimble@lists.launchpad.net>"]
+description = "Concrete types derived from libwallet traits"
+license = "Apache-2.0"
+repository = "https://github.com/groncoin/gringron-wallet"
+keywords = [ "crypto", "gringron", "mimblewimble" ]
+exclude = ["**/*.gringron", "**/*.gringron2"]
+edition = "2018"
+
+[dependencies]
+blake2-rfc = "0.2"
+thiserror = "1"
+futures = "0.3"
+rand = "0.6"
+serde = "1"
+serde_derive = "1"
+serde_json = "1"
+log = "0.4"
+ring = "0.16"
+uuid = { version = "0.8", features = ["serde", "v4"] }
+chrono = { version = "0.4.11", features = ["serde"] }
+lazy_static = "1"
+tokio = { version = "0.2", features = ["full"] }
+reqwest = { version = "0.10", features = ["rustls-tls", "socks"] }
+
+#Socks/Tor/Bridge/Proxy
+byteorder = "1"
+ed25519-dalek = "1.0.0-pre.4"
+x25519-dalek = "0.6"
+data-encoding = "2"
+regex = "1.3"
+timer = "0.2"
+sysinfo = "0.29"
+base64 = "0.12.0"
+url = "2.1"
+
+gringron_wallet_util = { path = "../util", version = "5.2.0-beta.1" }
+gringron_wallet_config = { path = "../config", version = "5.2.0-beta.1" }
+gringron_wallet_libwallet = { path = "../libwallet", version = "5.2.0-beta.1" }
+
+##### GrinGron Imports
+
+# For Release
+#gringron_core = "4.0.0"
+#gringron_keychain = "4.0.0"
+#gringron_chain = "4.0.0"
+#gringron_util = "4.0.0"
+#gringron_api = "4.0.0"
+#gringron_store = "4.0.0"
+
+# For beta release
+
+gringron_core = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3"}
+gringron_keychain = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+gringron_chain = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+gringron_util = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+gringron_api = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+gringron_store = { git = "https://github.com/groncoin/gringron", tag = "v5.2.0-beta.3" }
+
+# For bleeding edge
+# gringron_core = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_keychain = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_chain = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_util = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_api = { git = "https://github.com/groncoin/gringron", branch = "master" }
+# gringron_store = { git = "https://github.com/groncoin/gringron", branch = "master" }
+
+# For local testing
+# gringron_core = { path = "../../gringron/core"}
+# gringron_keychain = { path = "../../gringron/keychain"}
+# gringron_chain = { path = "../../gringron/chain"}
+# gringron_util = { path = "../../gringron/util"}
+# gringron_api = { path = "../../gringron/api"}
+# gringron_store = { path = "../../gringron/store"}
+
+#####
+
+[dev-dependencies]
+"remove_dir_all" = "0.7"
